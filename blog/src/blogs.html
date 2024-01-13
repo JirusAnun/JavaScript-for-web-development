@@ -20,27 +20,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script type="module" src="./components/MyNav.js"></script>
+    <script type="module" src="./components/MyFooter.js"></script>
   </head>
   <body class="bg-wd-black">
-    <nav class="bg-wd-darkgrey text-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-          <div class="flex space-x-4 px-2">
-            <div class="flex items-center space-x-1">
-              <a href="/src/index.html" class="py-5 px-3 hover:text-gray-100"
-                >Home</a
-              >
-              <a href="/src/blogs.html" class="py-5 px-3 hover:text-gray-100"
-                >Blog</a
-              >
-              <a href="/src/contact.html" class="py-5 px-3 hover:text-gray-100"
-                >Contact</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <my-nav></my-nav>
     <header
       class="h-[400px] w-full flex flex-col justify-center items-center text-primary gap-4 bg-hero-pattern bg-center bg-cover bg-no-repeat"
     >
@@ -58,8 +43,8 @@
       </div>
       <div class="flex justify-between gap-10 mb-6 mt-4">
         <input
-          onkeyup="searchBlogs(this)"
-          class="py-[7px] pl-4 w-full text-wd-black"
+          oninput="searchBlogs(this)"
+          class="block w-full p-3 ps-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           type="text"
           placeholder="Search Blog..."
         />
@@ -95,53 +80,8 @@
       </section>
     </main>
 
-    <footer class="flex flex-col text-white justify-center w-full px-8">
-      <section class="flex justify-between">
-        <div class="flex flex-col gap-6 w-2/6">
-          <h3 class="font-bold text-[32px]">Jane Doe</h3>
-          <p>
-            Hello, beautiful passerby. I’m Jane Doe. A passionate photographer.
-            I love to bla bla bla.... bla bla bla.... bla bla bla.... bla bla
-            bla.... bla bla bla.... bla bla bla.... bla bla bla.... I’m
-            available for hiring.
-          </p>
-          <form onsubmit="onSubmit(event)" class="flex flex-col gap-4">
-            <input
-              type="email"
-              name="myEmail"
-              placeholder="Enter your email"
-              class="py-[14px] pl-4 w-full text-wd-black"
-            />
-            <button
-              type="submit"
-              class="bg-primary text-[#010101] px-[33px] py-3 w-1/2"
-            >
-              Subscribe <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </form>
-        </div>
-        <div class="flex flex-col gap-6 w-2/6">
-          <h3 class="font-bold text-[32px]">Get in touch!</h3>
-          <p>
-            MBK Tower 20th Floor, 444, Phaya Thai Rd, Wang Mai, Pathum Wan,
-            Bangkok 10330
-          </p>
-          <p>Email: tanapol@skooldio.com</p>
-          <div class="flex gap-4">
-            <i class="fa-brands fa-facebook fa-2xl text-wd-brand"></i>
-            <i class="fa-brands fa-instagram fa-2xl text-wd-brand"></i>
-            <i class="fa-brands fa-x-twitter fa-2xl text-wd-brand"></i>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <p
-          class="text-center font-bold border-t-[1px] border-primary py-12 mt-12"
-        >
-          © 2023, Jane Doe. All Rights Reserved.
-        </p>
-      </section>
-    </footer>
+    <my-footer></my-footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../scripts/blog-utils.js"></script>
   </body>
 </html>
